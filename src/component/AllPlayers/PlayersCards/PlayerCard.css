@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  .player-container{
+    background-color: white;
+    width :548px;
+    display: flex;
+    padding: 17px;
+    justify-content: space-evenly;  
+    border: 1px solid lightblue;
+  }
+
+  .player-image{
+    height:140px;
+    width:140px;
+    background-size:cover;
+    border-radius: 50%;
+  }
+
+  .player-information{
+    width: 320px;
+  }
+
+
+
+
