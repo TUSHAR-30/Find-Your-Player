@@ -9,11 +9,12 @@ function PlayerCard(playerdata) {
         <div className='player-container' >
             <div>
                 <div className='player-image' style={{backgroundImage:playerimage}}></div>
-                <NavLink to={`/player/${id}`}
+                {/* <NavLink to={`/player/${id}`} */}
+                <NavLink to={`/allplayers/player/${id}`}
                 style={{marginTop:'5px',marginLeft:'18px',fontSize:'1rem',fontWeight:'bolder',color:'green'}}>See Profile</NavLink>
             </div>
 
-            <div style={{height:'160px',width:'0px',borderLeft:'solid'}}></div>
+            <div style={{height:'199px',width:'0px',borderLeft:'solid'}}></div>
             <div className='player-information'>
                 <h2>{playerdata.name}</h2>
                 <p>Age:-{playerdata.age}</p>

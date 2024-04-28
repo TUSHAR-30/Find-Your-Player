@@ -10,7 +10,6 @@ function Filter(props) {
     runsAppliedFilters:[],
     wicketsAppliedFilters:[],
     matchesAppliedFilters:[],
-    // roleAppliedFilters: [],
   })
 
   const [showappliedfilters, updateShowAppliedFilters] = useState([]);
@@ -90,12 +89,6 @@ function Filter(props) {
     }
 
     props.handlefilteredPlayers(newplayers);
-
-      // if (filters.roleAppliedFilters.length > 0) {
-    //   newplayers = newplayers.filter(player => { return filters.roleAppliedFilters.includes(player.role) })
-    //   console.log("List after role filter:", newplayers);
-    // }
-
   }
 
 
@@ -118,8 +111,11 @@ function Filter(props) {
     console.log(filters);
     handlecards();
     handleshowfilters();
-    props.passappliedfilters(showappliedfilters.length);  // only have effect when mobile device has open the websit
   }, [filters])
+
+  useEffect(() => {
+    props.passappliedfilters(showappliedfilters.length); // only have effect when mobile device has open the website
+}, [showappliedfilters])
 
 
   return (

@@ -4,7 +4,7 @@ import 'react-slideshow-image/dist/styles.css'
 
 const slideImages=[
   {
-    url:'carousel/carousel1.png',
+    url:'carousel/carousel1.jpg',
     // caption:'Batsman'
   },
   {
@@ -38,6 +38,7 @@ const Carousel=()=>{
               className='carousel-slide'
               style={{
                 height:'100vh',
+                width:'100vw',
                 backgroundImage:`url(${slideImage.url})`,
                 backgroundSize: 'cover',
                 backgroundPosition:'center',

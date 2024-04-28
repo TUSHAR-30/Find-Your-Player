@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import PlayerCard from './PlayerCard';
 import './PlayersCards.css'
 
-function PlayersCards(props) {
+function Temp2(props) {
     // Calculate the number of pages
     //playersdata=310
     const totalPages = Math.ceil(props.playersdata.length / 20);  //totalpages=16
@@ -47,19 +47,21 @@ function PlayersCards(props) {
     const playersToShow = props.playersdata.slice(startIndex, endIndex);  //playersToShow=[0th player,1player,2nd player,....,19thplayer]
 
 
-    useEffect(()=>{
+    useEffect(() => {
         setCurrentPage(1);
-    },[props.playersdata])
+    }, [props.playersdata])
 
     return (
         <div>
-            {
-                props.playersdata.length>0?
-                <p style={{ height: '50px', fontSize: '1.5rem', fontWeight: 'bold', backgroundColor: 'lightblue', paddingLeft: '20px' }}>Showing {startIndex + 1}-{Math.min(endIndex, props.playersdata.length)} of {props.playersdata.length} results</p>
-                :
-                <p style={{ height: '50px', fontSize: '1.5rem', fontWeight: 'bold', backgroundColor: 'lightblue', paddingLeft: '20px' }}>No such Filtered Playerd found</p>
-            }
-            
+
+            <p className='results-header'>
+                {
+                    props.playersdata.length > 0 ?
+                        `Showing ${startIndex + 1}-${Math.min(endIndex, props.playersdata.length)} of ${props.playersdata.length} results`
+                        :
+                        "No such Filtered Playerd found"
+                }
+            </p>
 
             <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
                 {playersToShow.map((playerdata, index) => (
@@ -75,47 +77,47 @@ function PlayersCards(props) {
                         runs={playerdata.runs}
                         wickets={playerdata.wickets}
                         average={playerdata.average}
-                        // battingaverage={playerdata.batting_average}
-                        // bowlingaverage={playerdata.bowling_average}
                     />
                 ))}
             </ul>
 
             {
-                props.playersdata.length>0?
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                
-                {/* Page number */}
-                <span style={{ marginRight: '30px' }}>Page {currentPage}:of {totalPages}</span>
-                {/* Render "Previous" button */}
-                {
-                    currentPage!==1?
-                    <button onClick={handlePreviousClick} style={{backgroundColor:'transparent',color:'blue',fontWeight:'bold',border:'none',outline:'none',marginRight:'20px'}}>PREVIOUS</button>
+                props.playersdata.length > 0 ?
+                    <div className='pagination-container'>
+                        <div className='showpageno'>Page : {currentPage} of {totalPages}</div>
+                        <div className='allpagebtns-container'>
+                            <button
+                                className={`previous-btn ${currentPage == 1 ? 'hide-previous-btn' : ''}`}
+                                onClick={handlePreviousClick}>PREVIOUS
+                            </button>
+                            <div className='allnumberspage-container'>
+                                {displayedPageNumbers.map((pageNumber) => {
+                                    return (
+                                        <button
+                                            key={pageNumber}
+                                            onClick={() => handlePageChange(pageNumber)}
+                                            className={`numberpage-item ${currentPage === pageNumber ? 'activepage' : ''}`}
+                                        >
+                                            {pageNumber}
+                                        </button>
+                                    )
+                                })}
+                            </div>
+                            <button
+                                className={`next-btn ${currentPage == endPage ? 'hide-next-btn' : ''}`}
+                                onClick={handleNextClick}>NEXT
+                            </button>
+                        </div>
+                    </div>
                     :
-                    <p></p>
-                }
-                {/* Render page buttons */}
-                {displayedPageNumbers.map((pageNumber) => (
-                    <button key={pageNumber} onClick={() => handlePageChange(pageNumber)} style={{ margin: '0 5px',width:'20px',backgroundColor:'transparent',border:'none', }} className={currentPage === pageNumber ? 'active' : ''}>{pageNumber}</button>
-                ))}
-                {/* Render "Next" button */}
-                {
-                    currentPage!==endPage?
-                    <button onClick={handleNextClick}  style={{backgroundColor:'transparent',color:'blue',fontWeight:'bold',border:'none',outline:'none',marginLeft:'20px'}}>NEXT</button>  
-                    :
-                    <p></p>
-                }
-            
-            </div>
-                :
-                <div>No player is found</div>
+                    <div></div>
             }
 
-            
+
         </div>
     );
 }
 
-export default PlayersCards;
+export default Temp2;
 
 

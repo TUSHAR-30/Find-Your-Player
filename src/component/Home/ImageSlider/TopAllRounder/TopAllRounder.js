@@ -23,7 +23,7 @@ import slide_image_7 from './assets/images/SikandarRaza.jpg';
 function TopAllRounder() {
   return (
     <div className="container">
-      <h1 className="heading">Top TopAllRounder</h1>
+      <h1 className="heading">Top AllRounder</h1>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}

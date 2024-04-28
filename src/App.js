@@ -17,7 +17,8 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='allplayers' element={<AllPlayers />}/>
         <Route path='about' element={<About />} />
-        <Route path='player/:id' element={<Playerinfo />}/>
+        {/* <Route path='player/:id' element={<Playerinfo />}/> */}
+        <Route path='allplayers/player/:id' element={<Playerinfo />}/>
       </Routes>
       </BrowserRouter>
 
@@ -26,6 +27,7 @@ function App() {
 }
 
 export default App
+
 
 
 

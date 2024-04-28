@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './TopBowler.css'
+// import './TopBowler.css'
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';

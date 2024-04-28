@@ -6,7 +6,7 @@
 
   .player-container{
     background-color: white;
-    width :548px;
+    width :500px;
     display: flex;
     padding: 17px;
     justify-content: space-evenly;  
@@ -22,6 +22,17 @@
 
   .player-information{
     width: 320px;
+    margin-left: 20px;
+  }
+
+
+  @media (max-width:600px) {
+    .player-container{
+      width: 100vw;
+    }
+    .player-information{
+      margin-left: 3px;
+    }
   }
 
 

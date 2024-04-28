@@ -8,7 +8,7 @@ export const PrimaryNav = styled.nav`
   background: #8bc34a;
   justify-content: space-between;
   padding: 0.18rem calc((100vw - 1000px) / 2);
-`
+  `
 export const MenuLink = styled(Link)`
   color: #fff;
   display: flex;
@@ -23,10 +23,11 @@ export const Menu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -25px;
+  height:40px;
 `
 const Navbar = () => {
   return (
-    <>
+    <div style={{position:'fixed', zIndex:'2',width:'100vw'}}>
       <PrimaryNav>
         <Menu>
           <MenuLink to="/" activeStyle>
@@ -40,7 +41,7 @@ const Navbar = () => {
           </MenuLink>
         </Menu>
       </PrimaryNav>
-    </>
+    </div>
   )
 }
 export default Navbar

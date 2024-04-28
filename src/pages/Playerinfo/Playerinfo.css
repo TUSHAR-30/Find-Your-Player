@@ -5,12 +5,12 @@
     height: auto;
     display: flex;
     justify-content: space-between;
-    margin-top: 2%;
+    margin-top: 6%;
 }
 .image-otherplayer{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 25%;
     height: auto;
     background-color: white;
