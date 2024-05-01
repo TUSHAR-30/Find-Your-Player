@@ -1,55 +1,54 @@
-import React,{useState} from 'react';
-import {Slide} from 'react-slideshow-image';
-import 'react-slideshow-image/dist/styles.css'
 
-const slideImages=[
+import React, { useState } from 'react';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+import './Carousel.css'
+
+const slideImages = [
   {
-    url:'carousel/carousel1.jpg',
+    url: 'carousel/carousel1.jpg',
     // caption:'Batsman'
   },
   {
-    url:'carousel/carousel2.jpg',
+    url: 'carousel/carousel2.jpg',
     // caption:'Hardik Pandya'
-  },  {
-    url:'carousel/carousel3.png',
+  }, {
+    url: 'carousel/carousel3.png',
     // caption:'Indian Team'
   }
 ];
 
 
 
-const Carousel=()=>{
+const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleSlideChange = (oldIndex, newIndex) => {
     setCurrentIndex(newIndex);
   };
 
-  return(
+  return (
     <div>
-      <Slide autoplay 
+      <Slide
+      autoplay 
       duration={2000} 
-      transitionDuration={500} 
+      transitionDuration={800} 
       pauseOnHover={false}  
-      onChange={handleSlideChange}>
-        {slideImages.map((slideImage,index)=>{
-          return(
-            <div key={index}
-              className='carousel-slide'
-              style={{
-                height:'100vh',
-                width:'100vw',
-                backgroundImage:`url(${slideImage.url})`,
-                backgroundSize: 'cover',
-                backgroundPosition:'center',
-                 //its effect will be seen when i resize the image
-                }}
-              >
-            </div>
-          )
-        })}
+      onChange={handleSlideChange}
+      >
+        {
+          slideImages.map((slideImage, index) => {
+            return (
+              <div key={index} className='carousel-slide'>
+                <img src={slideImage.url} className='carousel-image' />
+              </div>
+            )
+          })
+        }
       </Slide>
-      <div style={{ textAlign: 'center',position:'relative',top:'-40px'}}>
+      <div
+        style={{ textAlign: 'center', position: 'relative', top: '-40px' }}
+      >
         {slideImages.map((_, index) => (
           <span
             key={index}
@@ -71,6 +70,8 @@ const Carousel=()=>{
 }
 
 export default Carousel
+
+
 
 
 

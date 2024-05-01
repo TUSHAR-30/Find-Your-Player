@@ -1,22 +1,38 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import PlayerCard from './PlayerCard';
 import './PlayersCards.css'
 
 function Temp2(props) {
+    // State to track the current page
+    const [currentPage, setCurrentPage] = useState(1);
+
+    //State to show loader or not
+    const [isLoading, updatingIsLoading] = useState(false);
+
+    //Ref in order to capture the parent of result-header,playercard,pagination
+    const loadingref = useRef(null);
+
     // Calculate the number of pages
     //playersdata=310
     const totalPages = Math.ceil(props.playersdata.length / 20);  //totalpages=16
 
+
     // Create an array of page numbers
     const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1); //pageNumbers=[1,2,3,4,....,16]
 
-    // State to track the current page
-    const [currentPage, setCurrentPage] = useState(1);
-
     // Function to handle page change
     const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
+        if (loadingref.current && loadingref.current.firstChild) {
+            loadingref.current.firstChild.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        setTimeout(() => {
+            updatingIsLoading(true);
+        }, 750);
+        setTimeout(() => {
+            updatingIsLoading(false);
+            setCurrentPage(pageNumber);
+        }, 950);
     };
 
     // Calculate the start and end index of displayed page buttons
@@ -31,12 +47,30 @@ function Temp2(props) {
 
     // Function to handle "Previous" button click
     const handlePreviousClick = () => {
-        setCurrentPage((prevPage) => Math.max(1, prevPage - 1));
+        if (loadingref.current && loadingref.current.firstChild) {
+            loadingref.current.firstChild.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        setTimeout(() => {
+            updatingIsLoading(true);
+        }, 750);
+        setTimeout(() => {
+            updatingIsLoading(false);
+            setCurrentPage((prevPage) => Math.max(1, prevPage - 1));
+        }, 950);
     };
 
     // Function to handle "Next" button click
     const handleNextClick = () => {
-        setCurrentPage((prevPage) => Math.min(totalPages, prevPage + 1));
+        if (loadingref.current && loadingref.current.firstChild) {
+            loadingref.current.firstChild.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        setTimeout(() => {
+            updatingIsLoading(true);
+        }, 750);
+        setTimeout(() => {
+            updatingIsLoading(false);
+            setCurrentPage((prevPage) => Math.min(totalPages, prevPage + 1));
+        }, 950);
     };
 
     // Calculate the index range for the current page
@@ -48,13 +82,22 @@ function Temp2(props) {
 
 
     useEffect(() => {
+        // if (loadingref.current && loadingref.current.firstChild) {
+        //     loadingref.current.firstChild.scrollIntoView({ behavior: "smooth", block: "start" });
+        // }
+        updatingIsLoading(true);
         setCurrentPage(1);
+        setTimeout(() => {
+            updatingIsLoading(false);
+        }, 200);
     }, [props.playersdata])
 
     return (
-        <div>
+        <div style={{ backgroundColor: 'white' }}  ref={loadingref}>
 
-            <p className='results-header'>
+            {
+                isLoading?'':
+                <p className='results-header'>
                 {
                     props.playersdata.length > 0 ?
                         `Showing ${startIndex + 1}-${Math.min(endIndex, props.playersdata.length)} of ${props.playersdata.length} results`
@@ -62,27 +105,37 @@ function Temp2(props) {
                         "No such Filtered Playerd found"
                 }
             </p>
-
-            <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
-                {playersToShow.map((playerdata, index) => (
-                    <PlayerCard
-                        key={index}
-                        id={playerdata.player_id}
-                        name={playerdata.fullname}
-                        age={playerdata.age}
-                        country={playerdata.country}
-                        role={playerdata.playingrole}
-                        image_url={playerdata.image_path}
-                        matches={playerdata.matches}
-                        runs={playerdata.runs}
-                        wickets={playerdata.wickets}
-                        average={playerdata.average}
-                    />
-                ))}
-            </ul>
+            }
+        
 
             {
-                props.playersdata.length > 0 ?
+                isLoading ?
+                    <img src='./Loader.svg'></img>
+                    :
+                    <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }} >
+                        {playersToShow.map((playerdata, index) => (
+                            <PlayerCard
+
+                                key={index}
+                                id={playerdata.player_id}
+                                name={playerdata.fullname}
+                                age={playerdata.age}
+                                country={playerdata.country}
+                                role={playerdata.playingrole}
+                                image_url={playerdata.image_path}
+                                matches={playerdata.matches}
+                                runs={playerdata.runs}
+                                wickets={playerdata.wickets}
+                                average={playerdata.average}
+                            />
+                        ))}
+                    </ul>
+            }
+
+
+            
+            {
+                props.playersdata.length > 0 && !isLoading ?
                     <div className='pagination-container'>
                         <div className='showpageno'>Page : {currentPage} of {totalPages}</div>
                         <div className='allpagebtns-container'>
@@ -114,7 +167,7 @@ function Temp2(props) {
             }
 
 
-        </div>
+        </div >
     );
 }
 

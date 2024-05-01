@@ -20,7 +20,7 @@ function AllPlayers() {
 
 
   return (
-    <div className='allplayer-container'>
+    <div className='allplayer-container' style={{backgroundColor:'#f1f3f6'}}>
       <SearchBar playersdata={playersdata} />
       <div className='panellist-wrap'>
 

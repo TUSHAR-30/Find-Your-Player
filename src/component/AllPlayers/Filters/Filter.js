@@ -108,7 +108,6 @@ function Filter(props) {
  
 
   useEffect(() => {
-    console.log(filters);
     handlecards();
     handleshowfilters();
   }, [filters])

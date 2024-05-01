@@ -1,0 +1,10 @@
+.navbar{
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+}
+.navbar a.active{
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+}

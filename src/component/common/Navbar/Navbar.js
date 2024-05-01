@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink as Link } from 'react-router-dom'
+import './Navbar.css'
 export const PrimaryNav = styled.nav`
   z-index: 14;
   // height:100px;
@@ -27,7 +28,7 @@ export const Menu = styled.div`
 `
 const Navbar = () => {
   return (
-    <div style={{position:'fixed', zIndex:'2',width:'100vw'}}>
+    <div className='navbar'>
       <PrimaryNav>
         <Menu>
           <MenuLink to="/" activeStyle>

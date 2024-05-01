@@ -14,7 +14,7 @@ function Playerinfo() {
   const navigate=useNavigate();
   return (
     <div className='parentcontainer'>
-      <button onClick={()=>navigate(-1)}>Go Back</button>
+      {/* <button onClick={()=>navigate(-1)}>Go Back</button> */}
       <div className='image-otherplayer'>
         <div className='imagecontainer'>
           <div className='playersmallinfoheader'>
@@ -33,7 +33,7 @@ function Playerinfo() {
 
           {
             indianplayers.map((player, ind) => {
-              return (<NavLink to={`/player/${player.player_id}`} key={ind} className="otherplayer">
+              return (<NavLink to={`/allplayers/player/${player.player_id}`} key={ind} className="otherplayer">
                 <img src={player.image_path}></img>
                 <span>{player.fullname}</span>
               </NavLink>)
