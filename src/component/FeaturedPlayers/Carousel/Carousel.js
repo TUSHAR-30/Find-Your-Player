@@ -6,14 +6,17 @@ import './Carousel.css'
 
 const slideImages = [
   {
-    url: 'carousel/carousel1.jpg',
+    // url: 'carousel/carousel1.jpg',
+    url:'https://ik.imagekit.io/acjcnxcdk/extractedimages/carousel1.jpg?updatedAt=1714733230186',
     // caption:'Batsman'
   },
   {
-    url: 'carousel/carousel2.jpg',
+    url:'https://ik.imagekit.io/acjcnxcdk/extractedimages/carousel2.jpg?updatedAt=1714733230275',
+    // url: 'carousel/carousel2.jpg',
     // caption:'Hardik Pandya'
   }, {
-    url: 'carousel/carousel3.png',
+    // url: 'carousel/carousel3.png',
+    url:'https://ik.imagekit.io/acjcnxcdk/extractedimages/carousel3.png?updatedAt=1714733230437',
     // caption:'Indian Team'
   }
 ];
@@ -40,7 +43,7 @@ const Carousel = () => {
           slideImages.map((slideImage, index) => {
             return (
               <div key={index} className='carousel-slide'>
-                <img src={slideImage.url} className='carousel-image' />
+                <img loading='lazy' src={slideImage.url} className='carousel-image' />
               </div>
             )
           })

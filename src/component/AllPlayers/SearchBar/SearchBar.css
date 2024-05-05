@@ -34,6 +34,8 @@ h3 {
 input {
     outline: none;
     margin-left: 10px;
+    /* height: 100%; */
+    border: none;
 }
 
 button {

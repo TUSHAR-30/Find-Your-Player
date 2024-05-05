@@ -10,6 +10,8 @@ function Temp2(props) {
     //State to show loader or not
     const [isLoading, updatingIsLoading] = useState(false);
 
+    const[totalPlayersafterfilter,updatetotalPlayersafterfilter]=useState(props.playersdata.length)
+
     //Ref in order to capture the parent of result-header,playercard,pagination
     const loadingref = useRef(null);
 
@@ -73,6 +75,7 @@ function Temp2(props) {
         }, 950);
     };
 
+
     // Calculate the index range for the current page
     const startIndex = (currentPage - 1) * 20;   //startIndex=0
     const endIndex = currentPage * 20;           //endIndex=20
@@ -89,6 +92,7 @@ function Temp2(props) {
         setCurrentPage(1);
         setTimeout(() => {
             updatingIsLoading(false);
+            updatetotalPlayersafterfilter(props.playersdata.length)
         }, 200);
     }, [props.playersdata])
 
@@ -100,7 +104,9 @@ function Temp2(props) {
                 <p className='results-header'>
                 {
                     props.playersdata.length > 0 ?
-                        `Showing ${startIndex + 1}-${Math.min(endIndex, props.playersdata.length)} of ${props.playersdata.length} results`
+                        `Showing ${startIndex + 1}-${Math.min(endIndex, props.playersdata.length)} of 
+                        ${totalPlayersafterfilter} 
+                        results`
                         :
                         "No such Filtered Playerd found"
                 }
