@@ -1644,7 +1644,7 @@ const playersdata=[
         "wickets": "0",
         "player_id": 53,
         "age": 43,
-        "fullname": "Tony Pala Ura",
+        "fullname": "Mahendra Singh Dhoni",
         "playingrole": "Opening Batter"
     },
     {
@@ -1705,7 +1705,7 @@ const playersdata=[
         "wickets": "13",
         "player_id": 55,
         "age": 38,
-        "fullname": "Marlon Nathaniel Samuels",
+        "fullname": "Suresh Raina",
         "playingrole": "Top order Batter"
     },
     {
@@ -6765,7 +6765,7 @@ const playersdata=[
         "wickets": "0",
         "player_id": 234,
         "age": 23,
-        "fullname": "Nawroz Khan Mangal",
+        "fullname": "Yashasvi Jaiswal",
         "playingrole": "Top order Batter"
     },
     {
@@ -6797,7 +6797,7 @@ const playersdata=[
         "wickets": "0",
         "player_id": 235,
         "age": 27,
-        "fullname": "Yashasvi Bhupendra Kumar Jaiswal",
+        "fullname": "Ruturaj Gaikwad",
         "playingrole": "Opening Batter"
     },
     {
@@ -12725,7 +12725,7 @@ const playersdata=[
         "wickets": "28",
         "player_id": 454,
         "age": 40,
-        "fullname": "Sybrand Abraham Engelbrecht",
+        "fullname": "Irfan Khan Pathan",
         "playingrole": "Allrounder"
     },
     {
@@ -14032,7 +14032,7 @@ const playersdata=[
         "wickets": "5",
         "player_id": 502,
         "age": 30,
-        "fullname": "Confidence Tinotenda Mutombodzi",
+        "fullname": "Venkatesh Iyer",
         "playingrole": "Allrounder"
     },
     {
@@ -14560,7 +14560,7 @@ const playersdata=[
         "wickets": "15",
         "player_id": 522,
         "age": 33,
-        "fullname": "Ahmad Fayyaz Butt",
+        "fullname": "Krunal Pandya",
         "playingrole": "Right arm Medium fast"
     },
     {
@@ -14664,8 +14664,8 @@ const playersdata=[
         "wickets": "0",
         "player_id": 526,
         "age": 39,
-        "fullname": "Dane Cleaver",
-        "playingrole": "Wicketkeeper"
+        "fullname": "Kedhar Jadhav",
+        "playingrole": "Batsman"
     },
     {
         "0": "0",
