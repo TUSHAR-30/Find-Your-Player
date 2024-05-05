@@ -11,14 +11,6 @@ import 'swiper/css/navigation';
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
-// import slide_image_1 from './assets/images/HardikPandya.png';
-// import slide_image_2 from './assets/images/Kallis.png';
-// import slide_image_3 from './assets/images/Maxwell.jpg';
-// import slide_image_4 from './assets/images/RavindraJadeja.jpg';
-// import slide_image_5 from './assets/images/ShadabKhan.png';
-// import slide_image_6 from './assets/images/ShakibAlHasan.png';
-// import slide_image_7 from './assets/images/SikandarRaza.jpg';
-
 function TopBatsman() {
   return (
 
@@ -48,37 +40,37 @@ function TopBatsman() {
       >
         <SwiperSlide className={`swiper-slide ${Styles.swiper_slide}`}>
           {/* <img loading='lazy' src={slide_image_1} alt="slide_image" />  */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/HardikPandya.png?updatedAt=1714733230199" alt="slide_image" className={Styles.img}/>
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/SteveSmith.png?updatedAt=1714733236702" alt="slide_image" className={Styles.img}/>
 
         </SwiperSlide>
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_2} alt="slide_image" /> */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/Kallis.png?updatedAt=1714733233465" alt="slide_image" className={Styles.img} />
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/Virat%20Kohli.jpg?updatedAt=1714733236897" alt="slide_image" className={Styles.img} />
 
         </SwiperSlide>
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_3} alt="slide_image" /> */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/Maxwell.jpg?updatedAt=1714733233412" alt="slide_image" className={Styles.img}/>
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/JosButtler.png?updatedAt=1714733233743" alt="slide_image" className={Styles.img}/>
 
         </SwiperSlide>
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_4} alt="slide_image" /> */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/RavindraJadeja.jpg?updatedAt=1714733234004" alt="slide_image" className={Styles.img}/>
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/KaneWilliamson.png?updatedAt=1714733233655" alt="slide_image" className={Styles.img}/>
 
         </SwiperSlide>
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_5} alt="slide_image" /> */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/ShadabKhan.png?updatedAt=1714733233680" alt="slide_image" className={Styles.img} />
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/JoeRoot.png?updatedAt=1714733233354" alt="slide_image" className={Styles.img} />
 
         </SwiperSlide>
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_6} alt="slide_image" /> */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/ShakibAlHasan.png?updatedAt=1714733234261" alt="slide_image" className={Styles.img}/>
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/DavidWarner.jpeg?updatedAt=1714733230269" alt="slide_image" className={Styles.img}/>
 
         </SwiperSlide>
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_7} alt="slide_image" /> */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/SikandarRaza.jpg?updatedAt=1714733236576" alt="slide_image" className={Styles.img}/>
+          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/BabarAzam.png?updatedAt=1714733230036" alt="slide_image" className={Styles.img}/>
 
         </SwiperSlide>
 

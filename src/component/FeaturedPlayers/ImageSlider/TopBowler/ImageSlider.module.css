@@ -2,7 +2,7 @@
 .container {
   max-width: 124rem;
   padding: 4rem 1rem;
-  margin: 0 auto;
+  margin: -100px auto 0 auto;
 }
 
 .heading {

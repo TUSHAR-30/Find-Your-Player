@@ -47,9 +47,9 @@ function TopAllRounder() {
       >
         <SwiperSlide className={`swiper-slide ${Styles.swiper_slide}`}>
           {/* <img loading='lazy' src={slide_image_1} alt="slide_image" />  */}
-          <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/HardikPandya.png?updatedAt=1714733230199" alt="slide_image" className={Styles.img}/>
-
+            <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/HardikPandya.png?updatedAt=1714733230199" alt="slide_image" className={Styles.img}/>
         </SwiperSlide>
+
         <SwiperSlide className={Styles.swiper_slide}>
           {/* <img loading='lazy' src={slide_image_2} alt="slide_image" /> */}
           <img loading='lazy' src="https://ik.imagekit.io/acjcnxcdk/extractedimages/Kallis.png?updatedAt=1714733233465" alt="slide_image" className={Styles.img} />
