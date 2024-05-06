@@ -3,8 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import { Earth } from "../../component/Home/earth";
 import { TopSection } from "../../component/Home/topSection";
+const  Earth= React.lazy(() => import("../../component/Home/earth"))
+
 
 const CanvasContainer = styled.div`
     width: 100%;
