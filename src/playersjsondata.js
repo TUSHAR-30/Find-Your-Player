@@ -1674,7 +1674,7 @@ const playersdata=[
         "wickets": "22",
         "player_id": 54,
         "age": 43,
-        "fullname": "Mahendra Singh Dhoni",
+        "fullname": "Marlon Samuels",
         "playingrole": "Right arm Medium"
     },
     {
@@ -1736,7 +1736,7 @@ const playersdata=[
         "wickets": "42",
         "player_id": 56,
         "age": 37,
-        "fullname": "Suresh Kumar Raina",
+        "fullname": "Kieron Pollard",
         "playingrole": "Right arm Offbreak"
     },
     {
@@ -1763,7 +1763,7 @@ const playersdata=[
         "wickets": "0",
         "player_id": 57,
         "age": 34,
-        "fullname": "Kieron Adrian Pollard",
+        "fullname": "Fakhar Zaman",
         "playingrole": "Batting Allrounder"
     },
     {
@@ -1820,7 +1820,7 @@ const playersdata=[
         "wickets": "6",
         "player_id": 59,
         "age": 39,
-        "fullname": "Mark Sinclair Chapman",
+        "fullname": "Lendl Simmons",
         "playingrole": "Allrounder"
     },
     {
@@ -1844,7 +1844,7 @@ const playersdata=[
         "wickets": "4",
         "player_id": 60,
         "age": 30,
-        "fullname": "Lendl Mark Platter Simmons",
+        "fullname": "Mark Sinclair Chapman",
         "playingrole": "Occasional Wicketkeeper"
     },
     {
