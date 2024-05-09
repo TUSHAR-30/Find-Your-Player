@@ -1,0 +1,86 @@
+.allplayer-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.panellist-wrap
+,.panel-wrapComputer
+,.list-wrap
+{
+    overflow-y:auto
+}
+.hide-list-wrap{
+    display: none;
+}
+.panellist-wrap{
+    display: flex;
+    flex: 1;
+}
+.panel-wrapComputer{
+    flex-basis: 230px;
+    margin: 0px 0px 0px 10px;
+}
+.list-wrap{
+    flex: 1;
+    margin: 0px 10px 0px 10px;
+}
+
+/* Chrome Safari and Opera for scroll */
+::-webkit-scrollbar{
+    display: none;  
+}
+
+.panel-wrapComputer::-webkit-scrollbar{
+    display: none;
+}
+.list-wrap::-webkit-scrollbar{
+    display: none;
+}
+
+
+body{
+    /* Internet Explorer and Edge*/
+    -ms-overflow-style: none;  
+    /* Firefox*/
+    scrollbar-width: none;     
+}
+
+.panel-wrapMobile{
+    display: none;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+.show-filter{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 5px; 
+    cursor: pointer;  
+    width: 140px;
+}
+.show-filter:hover{
+    background-color: lightgreen;
+}
+
+.visible-filtercontainer{
+    visibility: visible;
+}
+.hidden-filtercontainer{
+    visibility: hidden;
+    position: absolute;
+}
+
+@media only screen and (max-width:600px){
+    .panellist-wrap{
+        flex-direction: column;
+    }
+    .panel-wrapMobile{
+        display:block;
+    }
+    .panel-wrapComputer{
+        display: none;
+    }
+}
+

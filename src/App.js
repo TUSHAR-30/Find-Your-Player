@@ -1,33 +1,37 @@
 import React, { useState, useEffect, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './component/common/Navbar/Navbar'
-import Glimmer from './component/common/Glimmer/Glimmer'
-const Home = React.lazy(() => import("./pages/Home/Home"))
-const About = React.lazy(() => import("./pages/About/About"));
-const AllPlayers = React.lazy(() => import("./pages/AllPlayers/AllPlayers"))
-const Playerinfo = React.lazy(() => import("./pages/Playerinfo/Playerinfo"))
-const FeaturedPlayers=React.lazy(()=>import("./pages/FeaturedPlayers/FeaturedPlayers"));
+import Navbar from './component/Navbar/Navbar'
+import Glimmer from './component/Glimmer/Glimmer'
+import { AllPlayersContextProvider } from './context/AllPlayersContext'
+const Home = React.lazy(() => import("./pages/Home"))
+const About = React.lazy(() => import("./pages/About"));
+const AllPlayers = React.lazy(() => import("./pages/AllPlayers"))
+const Playerinfo = React.lazy(() => import("./pages/Playerinfo"))
+const FeaturedPlayers = React.lazy(() => import("./pages/FeaturedPlayers"));
 
 
 
 function App() {
 
   return (
-    <div className='allplayer-container' style={{height:"100%",width:'100%'}}>
-      <BrowserRouter >
-        <Navbar />
-        <Suspense fallback={<Glimmer />}>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='allplayers' element={<AllPlayers />} />
-            <Route path='about' element={<About />} />
-            <Route path='featuredplayers' element={<FeaturedPlayers />} />
-            <Route path='allplayers/player/:id' element={<Playerinfo />} />
-          </Routes>
-        </Suspense>
+    <div className='allplayer-container' style={{ height: "100%", width: '100%' }}>
+      <AllPlayersContextProvider>
+        <BrowserRouter >
+          <Navbar />
+          <Suspense fallback={<Glimmer />}>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='about' element={<About />} />
+              <Route path='featuredplayers' element={<FeaturedPlayers />} />
+              <Route path='allplayers' element={<AllPlayers />} />
+              <Route path='allplayers/player/:id' element={<Playerinfo />} />
+            </Routes>
+          </Suspense>
 
-      </BrowserRouter>
+        </BrowserRouter>
+      </AllPlayersContextProvider>
+
 
     </div>
   )
