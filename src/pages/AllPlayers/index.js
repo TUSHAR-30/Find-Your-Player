@@ -97,10 +97,6 @@ const context=useContext(AllPlayersContext);
 
     </div>
   )
-
-
-
-
 }
 
 export default AllPlayers

@@ -1,8 +1,7 @@
-import React,{useContext} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { NavLink as Link, useNavigate} from 'react-router-dom'
+import { NavLink as Link} from 'react-router-dom'
 import './Navbar.css'
-import AllPlayersContext from '../../context/AllPlayersContext'
 
 export const PrimaryNav = styled.nav`
   z-index: 99;
@@ -34,17 +33,19 @@ export const Menu = styled.div`
     gap:8vw
   }
 `
-const Navbar = () => {
-  const ctx=useContext(AllPlayersContext);
-  const navigate=useNavigate();
-
+const Navbar = (props) => {
+  console.log("Navbar rendered");
+  const handleClick = () => {
+    // Use history.goBack() to navigate back without causing re-renders
+    window.history.back();
+  };
   return (
     <div className='navbar'>
       <PrimaryNav>
         <Menu>
           <img src="https://img.icons8.com/ios-filled/50/circled-left-2.png" alt="circled-left-2"  
-            onClick={()=>navigate(-1)} 
-            className={`backbtn ${ctx.showBackBtn?'showbackbtn':'hidebackbtn'}`}
+            onClick={handleClick} 
+            className={`backbtn ${props.showBackBtn?'showbackbtn':'hidebackbtn'}`}
           />
           <MenuLink to="/" activeStyle  >
             Home
@@ -63,4 +64,4 @@ const Navbar = () => {
     </div>
   )
 }
-export default Navbar
+export default  Navbar

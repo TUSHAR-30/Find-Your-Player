@@ -3,7 +3,7 @@ import playersdata from "../data/playersjsondata";
 
 let AllPlayersContext = React.createContext();
 
-export function AllPlayersContextProvider(props) {
+ export function AllPlayersContextProvider(props) {
 
     const [filters, updateFilters] = useState({
         nationalityAppliedFilters: [],
@@ -13,8 +13,6 @@ export function AllPlayersContextProvider(props) {
         wicketsAppliedFilters:[],
         matchesAppliedFilters:[],
       }) // It is used to manage the filters
-
-    const [showBackBtn,updateShowBackBtn]=useState(false); //It is used in navbar.js to toggle backbtn visibility
 
     const [filteredPlayers, updateFilteredPlayers] = useState(playersdata);
     const [filterIsShown, updateFilterIsShown] = useState(false);   // The filterIsShown state is used to check wheter i am in mobile view or computer view 
@@ -38,12 +36,11 @@ export function AllPlayersContextProvider(props) {
             showappliedfilters:showappliedfilters,
             filters:filters,
             updateFilters:updateFilters,
-            showBackBtn:showBackBtn,
-            updateShowBackBtn:updateShowBackBtn
         }}>
         {props.children}
     </AllPlayersContext.Provider>
 
 }
+
 
 export default AllPlayersContext;

@@ -1,10 +1,11 @@
 import React from 'react'
 import Nationality from './Nationality'
-import Age from './Age'
-import BattingAverage from './BattingAverage'
-import Runs from './Runs'
-import Wickets from './Wickets'
-import Matches from './Matches'
+import AllFilters from './AllFilters'
+// import Age from './Age'
+// import BattingAverage from './BattingAverage'
+// import Runs from './Runs'
+// import Wickets from './Wickets'
+// import Matches from './Matches'
 
 function AvailableFilters(props) {
 
@@ -17,7 +18,17 @@ function AvailableFilters(props) {
           nationalityappliedfilters={props.nationalityappliedfilters}
         />
 
-        <Age 
+        <AllFilters
+          playersdata={props.playersdata} 
+          handlefilters={props.handlefilters}
+          ageappliedfilters={props.ageappliedfilters}
+          battingaverageappliedfilters={props.battingaverageappliedfilters}
+          runsappliedfilters={props.runsappliedfilters}
+          wicketsappliedfilters={props.wicketsappliedfilters}
+          matchesappliedfilters={props.matchesappliedfilters}
+        />
+
+        {/* <Age 
           playersdata={props.playersdata} 
           handlefilters={props.handlefilters}
           ageappliedfilters={props.ageappliedfilters}
@@ -45,7 +56,7 @@ function AvailableFilters(props) {
           playersdata={props.playersdata} 
           handlefilters={props.handlefilters}
           matchesappliedfilters={props.matchesappliedfilters}
-        />
+        /> */}
 
     </div>
   )

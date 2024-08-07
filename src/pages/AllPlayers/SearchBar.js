@@ -7,6 +7,7 @@ function SearchBar({ playersdata }) {
   const [inputvalue, updateInputValue] = useState('');
   const [suggestions, updateSuggestions] = useState([]);
   const [isInputFieldFocus, updateIsInputFieldFocus] = useState(false);
+  const [noPlayerExists, setNoPlayerExists] = useState(false);
 
   useEffect(() => {
     let timer;
@@ -15,7 +16,15 @@ function SearchBar({ playersdata }) {
         let lowercaseinputvalue = inputvalue.toLowerCase();
         let newplayerslist = playersdata.filter(person => person.fullname.toLowerCase().startsWith(lowercaseinputvalue));
         updateSuggestions(newplayerslist);
+        if (newplayerslist.length === 0) {
+          setNoPlayerExists(true);
+        } else {
+          setNoPlayerExists(false);
+        }
       }, 300);
+    }
+    else{
+      setNoPlayerExists(false); // Reset the state when input value is empty
     }
     return () => {
       clearTimeout(timer);
@@ -71,7 +80,10 @@ function SearchBar({ playersdata }) {
           <div>
             {
             isInputFieldFocus && 
-            inputvalue.length > 0 && <ul>No player to show</ul>}
+            inputvalue.length > 0 && 
+            noPlayerExists &&
+            (<ul>No such player exist</ul>)
+            }
           </div>
 
       }

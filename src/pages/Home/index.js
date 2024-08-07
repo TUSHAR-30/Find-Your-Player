@@ -17,7 +17,6 @@ const CanvasContainer = styled.div`
 
 
 function Home() {
-
   const ctx=useContext(AllPlayersContext);
 
   useEffect(()=>{
